@@ -242,7 +242,7 @@ Solicite o segundo número.
 Ao final, exiba o resultado da operação escolhida. Caso seja informada uma operação inválida, exiba uma mensagem de erro. */
 
 /*let num1 = Number(prompt("Digite o Primeiro número: "));
-let operacao = (prompt("Digite a operação desejada: "));
+let operacao = prompt("Digite a operação desejada: ");
 let num2 = Number(prompt("Digite o Segundo Número: "));
 
 if (operacao !=="+" && operacao !== "-" && operacao !== "*" && operacao !==  "/") {
@@ -276,11 +276,11 @@ Solicite três números diferentes ao usuário e informe qual deles é o maior.*
 const num2 = Number(prompt("Digite o Segundo Número"))
 const num3 = Number(prompt("Digite o Terceiro Número"))
 
-if (num1 > num2 && num1 > num3) {
+if (num1 >= num2 && num1 >= num3) {
 
     console.log(num1, "É maior")
 
-} else if (num2 > num1 && num2 > num3) {
+} else if (num2 >= num1 && num2 >= num3) {
 
     console.log(num2, "É maior")
 
@@ -296,13 +296,13 @@ Solicite o valor da compra e informe o valor final que deverá ser pago.
 Caso a compra não atinja esse valor, informe o preço sem desconto. */
 
 
-/*let valor = Number(prompt("Digite o valor"));
+/*const valor = Number(prompt("Digite o valor"));
 let total;
 
-if (valor >= 100) {
+if (valor > 100) {
 
-    total = (valor *10) /100;
-    valor = valor - total
+    total = valor * 0.10;
+    valor = valor - total;
     console.log("O valor final do produto com 10% de desconto será de R$" ,valor.toFixed(2))
 
 } else {
@@ -314,12 +314,13 @@ if (valor >= 100) {
     /*4. Sistema de login
 Crie um programa que solicite um nome de usuário e uma senha.
 Considere que:
-Usuário: admin */
+Usuário: admin 
+Senha: 1234*/
 
 
 
-/*const user = (prompt("Digite o Nome de Usuário: "))
-let senha = (prompt("Digite a Senha: "))
+/*const user = prompt("Digite o Nome de Usuário: ")
+const senha = prompt("Digite a Senha: ")
 
 if (user !== "admin" || senha!== "1234") {
     alert("Acesso Negado!")
@@ -383,10 +384,10 @@ Exiba o conceito correspondente.*/
 
 
 
-let nota = Number(prompt("Digite a nota do aluno: "))
+/*let nota = Number(prompt("Digite a nota do aluno: "))
 if (nota > 100 || nota < 0) {
 
-    alert("Nota Invalida")
+    alert("Nota Inválida")
 
 } else if (nota <60 ) {
     
@@ -408,4 +409,188 @@ if (nota > 100 || nota < 0) {
  else {
 
     console.log("A")
+} */
+
+
+/*3. Cálculo de IMC
+Solicite o peso (em quilogramas) e a altura (em metros) de uma pessoa.
+Calcule o Índice de Massa Corporal (IMC) e informe sua classificação:
+Abaixo do peso 
+Peso normal 
+Sobrepeso 
+Obesidade */
+
+
+
+
+
+
+
+/*4. Ano Bissexto
+Solicite ao usuário um ano e informe se ele é bissexto ou não bissexto.
+Considere as seguintes regras:
+Um ano é bissexto se for divisível por 400; ou 
+Se for divisível por 4 e não for divisível por 100. 
+Caso contrário, o ano não é bissexto.*/
+
+/*const ano = Number(prompt("Digite o Ano: "))
+
+//se o resto da divisao por 4 for igual a 0, o ano é bissexto
+//se o resto da divisao de ano por 100 é diferente de zero
+
+//ou o resto da divisao de ano por 400 é igual a zero
+
+
+if ( (ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0) {
+    alert(ano + " É um ano bissexto")
 }
+else {
+    alert(ano + " NÃO é um ano bissexto")
+}*/
+
+
+
+
+
+
+
+
+
+
+//Laços de Repetição
+//perimite criar loops que são executados zero ou mais vezes
+//Enquanto condicao for TRUE, executa bloco de código
+
+/*while (false){
+    console.log("Ao infinito e... Além!")
+}*/
+
+
+//contador que exiba na tela de 1 a 5
+
+/*let contador = 1;
+
+while (contador <=5){
+
+    console.log("Contagem: " + contador)
+
+    //contador = (contador + 1) contador recebe ele +1
+
+    contador++ //contador recebe ele +1
+}*/
+
+//contagem regressiva
+
+
+/*let tempo = 10;
+
+while (tempo > 0){
+
+    console.log(tempo)
+
+    //tempo = tempo -1 Retira 1 do tempo
+    tempo-- //Retira -1 do tempo
+
+}*/
+
+
+//validacao de senha
+
+//const senhaCorreta = "148supersenha"
+/*let tentativa =""
+
+
+while (tentativa != senhaCorreta){
+
+    tentativa = prompt("Digite a Senha: ")
+
+    if(tentativa === senhaCorreta)
+        console.log("Senha correta! Acesso liberado.")
+
+    else {
+        console.log("Senha incorreta. Tente novamente")
+    }
+}*/
+
+
+/*let soma = 0;
+let numero = 0;
+
+while (soma <=100){
+
+     numero = Number(prompt("Digite um Número: "));
+
+     soma = soma + numero;
+}
+
+console.log("A soma dos numeros chegou em " + soma);*/
+
+
+
+
+//DO - WHILE Perimite criar loops que são executados uma ou mais vezes
+
+
+
+/*let repetir = false
+
+//FAÇA
+do{
+    console.log("Só uma vez.")
+
+}while(repetir) //ENQUANTO A CONDIÇÃO FOR TRUE
+
+
+//WHILE vs DO..WHILE
+
+let num = 10;
+
+while (num < 5){
+    console.log("Isso não vai aparecer")
+}
+////////////////////////////////////////////
+
+do{
+    console.log("Isso vai aparecer uma vez")
+}while(num < 5)*/
+
+
+
+
+
+
+//ADVINHE O NUMERO
+
+
+//1 a 100
+
+const numeroSecreto = Math.floor(Math.random() * 10) +1;
+
+let palpite;
+let tentativas = 0;
+
+console.log("Advinhe o numero entre 1 a 10.");
+
+
+do{
+
+    //alert(Math.floor(Math.random() * 10) +1)
+
+    palpite = Number(prompt("Seu palpite: "));
+    tentativas++
+
+    if (Number.isNaN(palpite)){
+        alert("Digite um número válido")
+    }
+
+    else if (palpite == numeroSecreto){
+        alert("Acertou!! " + tentativas + " tentativas");
+    }
+    else if(palpite < numeroSecreto){
+        alert("Muito baixo, tente um número maior");
+    }
+    else if(palpite > numeroSecreto){
+        alert("Muito alto, tente um número menor");
+    }
+
+}while(palpite != numeroSecreto)
