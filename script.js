@@ -793,3 +793,28 @@ else {
 
 
 
+
+
+
+
+ /*4. Números pares de 1 a 50
+Exiba todos os números pares entre 1 e 50, um por linha.*/
+
+
+
+/*console.log("Numeros pares de 1 a 50")
+
+for(let pares = 1; pares <=50; pares++){
+
+    if (pares %2==0){
+
+        console.log(pares)
+    }
+    
+}*/
+
+
+
+
+/*5. Jogo de adivinhação
+Crie um programa que gere um número aleatório entre 1 e 100.*/
