@@ -562,9 +562,9 @@ do{
 //ADVINHE O NUMERO
 
 
-//1 a 100
+//1 a 10
 
-const numeroSecreto = Math.floor(Math.random() * 10) +1;
+/*const numeroSecreto = Math.floor(Math.random() * 10) +1;
 
 let palpite;
 let tentativas = 0;
@@ -593,4 +593,203 @@ do{
         alert("Muito alto, tente um número menor");
     }
 
-}while(palpite != numeroSecreto)
+}while(palpite != numeroSecreto)*/
+
+
+
+
+
+
+//FOR -> LOOP
+
+
+
+
+//let conta = 0; Variavel de controle
+
+//conta < 10; analise de condicao
+
+//conta++ O que acontece na variável de controle
+
+
+/*for (let conta = 0; conta < 10; conta++){
+    console.log(conta)
+
+}
+console.log("O loop acabou")*/
+
+
+
+
+
+/*const numero = Number(prompt("Tabuada de qual numero? "));
+
+if (Number.isNaN(numero)){
+    console.log("❌ Numero inválido! ");
+}
+else {
+
+    //console.log("Tabuada do " + numero) MESMA COISA ABAIXO
+    console.log(`\n Tabuada do ${numero} \n`); //OUTRO JEITO DE JUNTAR STRING COM VARIAVEL
+
+    for ( let i = 1; i<=10;  i++ ){
+
+        const resultado = numero * i;
+        //console.log(numero + " x " + i + " = " + resultado)
+        console.log(`${numero} x ${i} = ${resultado}`);
+    }
+}
+console.log("FIM")*/
+
+
+
+//EXIBA NUMEROS PARES DE 0 A 20
+
+
+/*console.log("Numeros Pares de 0 a 20: \n")
+
+//pares = pares +2 MESMO CODIGO DE OPERACAO
+
+for( let pares=0; pares<=20; pares += 2  ){
+
+    console.log(pares)
+}*/
+
+
+
+//CONTAGEM REGRESSIVA COM FOR
+
+/*console.log("Lancamento em: \n")
+
+for (let conta = 10; conta >= 1; conta--){
+    console.log(conta + "...")
+}
+console.log("DECOLAR!!")*/
+
+
+
+/*for (let numero = 1; numero <= 3; numero++){
+
+    let linha = "";
+
+    for (let repeticao = 1; repeticao <= 3; repeticao ++){
+        linha += numero + " "
+    }
+
+    console.log(linha)
+
+}*/
+
+
+/*for (let linha = 1; linha <=5; linha ++){
+
+    let coluna = ""
+    
+    for (asterisco = 1; asterisco <= linha; asterisco ++){
+        coluna += "*" + " "
+    }
+    console.log(coluna)
+}*/
+
+
+
+
+
+
+
+
+//EXERCICOS DE REPETIÇÃO
+
+
+
+
+
+//NIVEL 1 FACIL
+
+
+
+
+
+/*1. Contagem de 1 a 10
+Crie um programa que exiba todos os números de 1 até 10, um por linha.*/
+
+
+/*num = 0
+
+while (num < 10){
+    num += 1
+    console.log(num)
+}*/
+
+
+
+
+
+
+/*2. Tabuada de um número
+Solicite um número ao usuário e exiba sua tabuada de multiplicação de 1 a 10.
+Exemplo para o número 5:
+5 x 1 = 5
+5 x 2 = 10
+...
+5 x 10 = 50*/
+
+
+/*const num = Number(prompt("Digite um numero para ver sua tabuada: "))
+
+if (Number.isNaN(num)){
+
+    console.log("Numero Inválido!");
+}
+else {
+
+    console.log(`Tabuada do ${num}`)
+
+    for (let i=1; i<=10; i++){
+        
+        let resultado = num * i
+
+        console.log(`${num} x ${i} = ${resultado}`)
+    }
+
+}*/
+
+
+
+
+
+
+/*3. Soma dos primeiros N números
+Solicite um número inteiro positivo ao usuário e calcule a soma de todos os números de 1 até esse valor.
+Exemplo:
+Entrada: 5 
+Saída: 15 
+(1 + 2 + 3 + 4 + 5 = 15)*/
+
+/*const numero = Number(prompt("Digite um numero e veja a soma de seus antecessores: "))
+
+if (Number.isNaN(numero)){
+    alert("Numero Invalido")
+}
+else {
+    let soma = 0
+
+    for (let i = 1; i <= numero; i++){
+        soma += i
+       
+    }
+     console.log(soma)
+}*/
+
+
+
+
+
+
+
+
+
+//NIVEL 2 INTERMEDIARIO
+
+
+
