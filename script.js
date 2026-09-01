@@ -867,6 +867,12 @@ Saída:
 
 
 
+
+//Nivel 3 Dificil
+
+
+
+
 /*let entrada;
 
 while (true) {
@@ -971,21 +977,98 @@ Divisores de 6: 1, 2 e 3
 1 + 2 + 3 = 6 
 Crie um programa que encontre e exiba todos os números perfeitos entre 1 e 1000. */
 
-/*console.log("Números perfeitos entre 1 e 1000:");
+//console.log("Números perfeitos entre 1 e 1000:");
 
-for (let num = 1; num <= 1000; num++) {
+// for (let num = 1; num <= 1000; num++) {
 
-    let somaDivisores = 0;
+//     let somaDivisores = 0;
 
-    for (let i = 1; i < num; i++) {
+//     for (let i = 1; i < num; i++) {
 
-        if (num % i === 0) {
+//         if (num % i === 0) {
 
-            somaDivisores += i;
-        }
+//             somaDivisores += i;
+//         }
+//     }
+//     if (somaDivisores === num) {
+
+//         console.log(num);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+//ARRAY
+//UM ARRAY É UM TIPO DE DADOS QUE SERVE PARA ARMAZENAR VALOR
+//SEQUENCIALMENTO EM FORMA DE LISTA.
+
+//ITENS COMEÇAM COM NÚMERO ZERO.
+
+// const numeros = [1, 2, 3, 4, 5];
+// const nomes = ["José", "Maria", "João", "Ana", "Pedro", "Alexandre", "Carla", "Lucas", "Fernanda", "Rafael"];
+
+
+// console.log(numeros[0]); // Acessa o primeiro elemento do array "numeros"
+// console.log(nomes[2]); // Acessa o terceiro elemento do array "nomes"
+
+// //LENGTH
+// //É UMA PROPRIEDADE QUE RETORNA O TAMANHO DO ARRAY.
+
+// console.log(nomes.length);
+
+
+// //VAMOS PERCORRER TODA A LISTA DE NOMES E EXIBIR CADA UM DELA NA TELA.
+// //E COLOCAR NO CONSOLE CADA ITEM.
+
+// for (let i = 0; i < nomes.length; i++) {
+
+//     console.log(nomes[i]);
+// }
+
+
+
+//FOR OF
+//É UMA FORMA MAIS SIMPLES DE PERCORRER UM ARRAY.
+
+// const frutas = ["Maçã", "Banana", "Laranja", "Uva", "Abacaxi"];
+
+// for ( const fruta of frutas) {
+//     console.log(fruta);
+// }
+
+
+
+//FACA A SOMA DE TODOS OS NUMEROS DENTRO DE UM ARAAY
+
+// const listaNumeros = [10, 25, 8, 42, 15, 7];
+
+// let soma = 0;
+
+// for (const numero of listaNumeros) {
+//     soma += numero;
+// }
+// console.log("Numeros ", listaNumeros)
+// console.log("Soma ", soma)
+
+
+
+
+const notas = [7.5, 9.0, 6.5, 8.8, 10.0, 5.5];
+
+let maiorNota = notas[0];
+
+for (const nota of notas) {
+    if (nota > maiorNota) {
+        maiorNota = nota;
     }
-    if (somaDivisores === num) {
-
-        console.log(num);
-    }
-}*/
+}
+console.log("Maior nota: ", maiorNota);
