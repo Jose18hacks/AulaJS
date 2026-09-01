@@ -817,4 +817,175 @@ for(let pares = 1; pares <=50; pares++){
 
 
 /*5. Jogo de adivinhação
-Crie um programa que gere um número aleatório entre 1 e 100.*/
+Crie um programa que gere um número aleatório entre 1 e 100.
+O usuário deverá informar palpites até acertar o número.
+Durante o jogo:
+Se o palpite for maior que o número secreto, informe que o número é menor. 
+Se o palpite for menor que o número secreto, informe que o número é maior. 
+Quando acertar, exiba uma mensagem de parabéns e encerre o programa. */
+
+
+
+/*const numeroSecreto = Math.floor(Math.random() * 100) + 1; 
+let palpite; 
+let tentativas = 0; 
+
+console.log("Adivinhe o número entre 1 e 100."); 
+
+do { 
+    palpite = Number(prompt("Seu palpite:")); 
+    
+    if (Number.isNaN(palpite)) { 
+        alert("Digite um número válido"); 
+        continue; // Pula para a próxima iteração sem contar tentativa
+    } 
+    
+    tentativas++; 
+
+    if (palpite === numeroSecreto) { 
+        alert("Acertou!! Você precisou de " + tentativas + " tentativa(s)."); 
+    } else if (palpite < numeroSecreto) { 
+        alert("Muito baixo, tente um número maior"); 
+    } else if (palpite > numeroSecreto) { 
+        alert("Muito alto, tente um número menor"); 
+    } 
+} while (palpite !== numeroSecreto);*/
+
+
+
+/*6. Solicite um número inteiro ao usuário e faça uma contagem regressiva até 0, exibindo cada número.
+Exemplo:
+Entrada:
+5
+Saída:
+5
+4
+3
+2
+1
+0*/
+
+
+
+/*let entrada;
+
+while (true) {
+    entrada = Math.floor(Number(prompt("Digite um Número para a contagem Regressiva: ")));
+
+    if (!Number.isNaN(entrada) && entrada >= 0) {
+        break;
+    }
+    
+    alert("Entrada inválida! Por favor, digite um número válido.");
+}
+
+for (let conta = entrada; conta >= 0; conta--) {
+    console.log(conta);
+}*/
+
+
+/*7. Soma dos dígitos
+Solicite um número inteiro positivo ao usuário e calcule a soma de todos os seus dígitos.
+Exemplo:
+Entrada: 1234 
+Saída: 10 
+(1 + 2 + 3 + 4 = 10)*/
+
+
+/*let numero;
+
+while (true) {
+    numero = prompt("Digite um número inteiro positivo para somar seus dígitos: ");
+
+    if (!Number.isNaN(Number(numero)) && Number(numero) > 0) {
+        break;
+    }
+    alert("Entrada inválida! Por favor, digite um número válido.");
+}
+let soma = 0;
+for (let i = 0; i < numero.length; i++) {
+    let digito = Number(numero[i]);
+    soma += digito;
+}
+console.log(soma);*/
+
+
+
+
+/*8. Fatorial
+Solicite um número inteiro positivo ao usuário e calcule o seu fatorial.
+O fatorial de um número é obtido multiplicando esse número por todos os inteiros positivos menores que ele, até chegar em 1.
+Exemplo:
+5! = 5 × 4 × 3 × 2 × 1 = 120 
+4! = 4 × 3 × 2 × 1 = 24 
+3! = 3 × 2 × 1 = 6 
+Ao final, exiba o resultado do cálculo. */
+
+/*let numero = Number(prompt("Digite um número inteiro positivo para calcular seu fatorial: "));
+
+if (Number.isNaN(numero) || numero < 0 || !Number.isInteger(numero)) {
+    alert("Entrada inválida! Por favor, digite um número inteiro positivo.");
+} else {
+    let fatorial = 1;
+    for (let i = 1; i <= numero; i++) {
+        fatorial *= i;
+    }
+    console.log(`O fatorial de ${numero} é ${fatorial}`);
+} */
+
+
+    /*9. Inverter número
+Solicite um número inteiro positivo ao usuário e exiba esse número com seus dígitos na ordem inversa.
+Exemplo:
+Entrada: 12345 
+Saída: 54321 */
+
+
+/*let numero;
+
+while (true) {
+    numero = Number(prompt("Digite um número inteiro positivo para inverter seus dígitos: "));
+    if (!Number.isNaN(numero) && numero >= 0 && Number.isInteger(numero)) {
+        break;
+    }
+    alert("Entrada inválida! Por favor, digite um número válido.");
+}
+
+let numeroInvertido = 0;
+
+while (numero > 0) {
+
+    let digito = numero % 10; 
+    numeroInvertido = numeroInvertido * 10 + digito; 
+    numero = Math.floor(numero / 10); 
+}
+console.log(numeroInvertido);*/
+
+
+
+
+/*10. Números perfeitos até 1000
+Um número perfeito é aquele cuja soma de todos os seus divisores positivos, exceto ele mesmo, é igual ao próprio número.
+Exemplo:
+Divisores de 6: 1, 2 e 3 
+1 + 2 + 3 = 6 
+Crie um programa que encontre e exiba todos os números perfeitos entre 1 e 1000. */
+
+/*console.log("Números perfeitos entre 1 e 1000:");
+
+for (let num = 1; num <= 1000; num++) {
+
+    let somaDivisores = 0;
+
+    for (let i = 1; i < num; i++) {
+
+        if (num % i === 0) {
+
+            somaDivisores += i;
+        }
+    }
+    if (somaDivisores === num) {
+
+        console.log(num);
+    }
+}*/
