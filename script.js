@@ -1007,6 +1007,13 @@ Crie um programa que encontre e exiba todos os números perfeitos entre 1 e 1000
 
 
 
+
+
+
+
+
+
+
 //ARRAY
 //UM ARRAY É UM TIPO DE DADOS QUE SERVE PARA ARMAZENAR VALOR
 //SEQUENCIALMENTO EM FORMA DE LISTA.
@@ -1062,13 +1069,150 @@ Crie um programa que encontre e exiba todos os números perfeitos entre 1 e 1000
 
 
 
-const notas = [7.5, 9.0, 6.5, 8.8, 10.0, 5.5];
+// const notas = [7.5, 9.0, 6.5, 8.8, 10.0, 5.5];
 
-let maiorNota = notas[0];
+// let maiorNota = notas[0];
 
-for (const nota of notas) {
-    if (nota > maiorNota) {
-        maiorNota = nota;
-    }
-}
-console.log("Maior nota: ", maiorNota);
+// for (const nota of notas) {
+//     if (nota > maiorNota) {
+//         maiorNota = nota;
+//     }
+// }
+// console.log("Maior nota: ", maiorNota);
+
+
+//Vetor - guarda valores
+//posicoes (indice) -> 0
+//for of -> percorre o array
+
+//OBJETO - São como "fichas" com informações
+// - Cada informação tem um nome (chave) e um valor
+
+//PESSOA - ( Nome, idade, Email, Genrero, CPF)
+
+//  const pessoa = {
+//      nome: "José",
+//      idade: 30,
+//      email: "jose@email.com",
+//      genero: "Masculino",
+//      cpf: "123.456.789-00"
+//  };
+
+// // console.log(pessoa) //Acessa todo o objeto
+// // console.log(pessoa.nome) //Acessa apenas o nome do objeto
+// // console.log(pessoa['idade']) //Acessa apenas a idade do objeto "30"
+
+// //FOR IN - Percorre as chaves do objeto
+
+// for (const chave in pessoa) {
+
+//     //Chave é o nome da propriedade do objeto
+//     //objeto[chave] é o valor da propriedade do objeto
+
+//     console.log(pessoa[chave]);
+//     //para cada vez que o for percorrer, ele vai pegar a CHAVE atual e retornar o VALOR que a chave representa.
+// }
+
+
+
+//Objeto Aluno que guarde os dados de nome, matricula, curso e nota.
+
+// const aluno = {
+//     //sempre chave e valor
+//     Nome: "Maria",
+//     Matricula: "2023001",
+//     Curso: "Engenharia de Software",
+//     Nota: 8.5
+// };
+// console.log("Dados do aluno:\n")
+
+// for (const chave in aluno) {
+//     const valor = aluno[chave];
+//     console.log(`${chave}: ${valor}`);
+// }
+
+//Lista de produtos
+
+//informcao de produto, preco e quantidade de itens
+
+//arrays de objetos.
+//cada item do array é um objeto.
+// const carrinho = [
+//     //objeto.
+//     {produto: "Camiseta", preco: 49.90, quantidade: 2},
+//     {produto: "Calça", preco: 99.90, quantidade: 1},
+//     {produto: "Tênis", preco: 199.90, quantidade: 1},
+// ];
+
+// let total = 0;
+
+// //FOR IN -> Objetos | retorna chaves / indice
+// //FOR OF -> Arrays, strings | retorna valores
+
+// for (const item of carrinho) {
+//     //Retornar apenas o nome do produto, o preço e o total a pagar
+// console.log(`Produto: ${item.produto}, Preço: R$${item.preco.toFixed(2)}, Quantidade: ${item.quantidade}`);
+//     total += item.preco * item.quantidade;
+// }
+// console.log(`Total a pagar: R$${total.toFixed(2)}`);
+
+
+
+
+
+
+
+// Desafio: Controle de pedidos de uma lanchonete 🍔
+
+// Crie um programa que represente os pedidos de uma lanchonete.
+
+// O programa deverá possuir pelo menos 4 itens, e cada item deve conter:
+
+// nome
+// preco
+// quantidade
+
+// Depois, o programa deverá:
+
+// Percorrer todos os itens utilizando for...of.
+// Calcular o valor total de cada item (preco × quantidade).
+// Exibir no console o nome do item, a quantidade e o valor total.
+// Calcular e exibir o valor total do pedido.
+// Ao final, informar qual item teve o maior valor total, considerando a quantidade comprada.
+
+
+
+
+
+
+
+// Produtos e seus dados (nome, preço e quantidade)
+// const pedidos = [
+//     { nome: "Hambúrguer", preco: 15.90, quantidade: 2 },
+//     { nome: "Batata Frita", preco: 8.90, quantidade: 1 },
+//     { nome: "Refrigerante", preco: 5.90, quantidade: 3 },
+//     { nome: "Sorvete", preco: 7.90, quantidade: 1 }
+// ];
+
+// // Variáveis para armazenar o valor total do pedido e o item com maior valor total
+// let valorTotalPedido = 0;
+// let itemMaiorValor = null;
+// let maiorValorTotal = 0;
+
+
+// // Percorrer todos os itens do pedido
+// for (const item of pedidos) {
+//     const valorTotalItem = item.preco * item.quantidade;
+//     console.log(`Item: ${item.nome}, Preço: R$${item.preco.toFixed(2)}, Quantidade: ${item.quantidade}, Valor Total: R$${valorTotalItem.toFixed(2)}`);
+//     valorTotalPedido += valorTotalItem;
+
+//     // Verificar se o item atual tem o maior valor total
+//     if (valorTotalItem > maiorValorTotal) {
+//         maiorValorTotal = valorTotalItem;
+//         itemMaiorValor = item;
+//     }
+// }
+
+// // Exibir o valor total do pedido e o item com maior valor total
+// console.log(`Valor total do pedido: R$${valorTotalPedido.toFixed(2)}`);
+// console.log(`Item com maior valor total: ${itemMaiorValor.nome} (R$${maiorValorTotal.toFixed(2)})`);
