@@ -1,1218 +1,388 @@
-//Linguagem Interpretada
-//Node.js
-//Tipagem Fraca
+//DOCUMENT   --> PAGINA INTEIRA DO MEU HTML 
+// getElementByID -> procura pelo atributo id=""
 
-//Condicionais (if, else, operadores lógicos)
+// titulo-filme -> ID que queremos. 
 
-/*const idade = 20;
-const temDocumento = true;
-const estaLista = true;
+//const elemento = document.getElementById('filme-principal')
+//console.log(elemento)
+//console.log(elemento.tagName)
 
-if (idade >= 18 && temDocumento && estaLista) {
-    console.log("Pode entrar!!");
-} else {
-    console.log("Acesso Negado!!")
+
+function selecionarPorId() {
+
+    const tituloFilme = document.getElementById('titulo-filme')
+
+    console.log(tituloFilme)
+    console.log(tituloFilme.tagName) //H3
+    console.log(tituloFilme.textContent) //o conteudo do H3
+    console.log(tituloFilme.id) //titulo-filme
+
+    //adicionei uma classe no elemento.
+    tituloFilme.classList.add('elemento-selecionado')
+
 }
 
-const temDinheiro = false;
-const temCartao = true;
-const temPix = false;
-
-if (temDinheiro || temCartao || temPix) {
-    console.log("Pode pagar")
-} else {
-    console.log("Nao pode pagar")
-}
-
-/*const user = "admin";
-const senha = "1234";
-
-const senhaCorreta = (senha === "1234");
-const ehAdmin = (usuario === "admin");
-const ehGerente = (usuario === "gerente");
-
-if ((ehAdmin && senhaCorreta) || (ehGerente && senhaCorreta)) {
-    console.log("Acesso liberado!")
-} else {
-    console.log("Acesso negado!")
-}
-
-if ((ehAdmin || ehGerente) && senhaCorreta) {
-
-} else {
-
-}*/
-
-/*const usuario = prompt("Usuario:");
-const senha = prompt("Senha:");
-
-const acessoAdmin = (usuario === "jose" && senha === "2508");
-const acessUser= (usuario === "user" && senha === "1234");
-
-if (acessoAdmin || acessUser) {
-    console.log("Acesso liberado")
-} else {
-    console.log("Acesso Negado")
-} */
-
-/*const nota = 60;
-
-if (nota >= 80) {
-    console.log("Aprovado!");
-} else if (nota >= 60) {
-    console.log("Recuperacao!");
-} else {
-    console.log("Reprovado!");
-} */
-
-/*const temp = Number(prompt("Digite a temperatura em Graus Celsius: "))
-
-if (Number.isNaN(temp)) {
-    console.log("Digite apenas Numeros")
-} else if(temp < 0) {
-    console.log("Muito frio")
-} else if (temp >= 0 && temp < 15) 
-    console.log("Frio");
-     else if (temp > 15 && temp <= 26) {
-    console.log("Agradável"); // Agora inclui o 26
-} else if (temp > 26 && temp <= 32) {
-    console.log("Quente");
-} else {
-    console.log("Muito quente"); // Captura tudo acima de 32
-} */
-
-/*const nome = prompt("Digite seu nome: ")
-console.log("Olá," + nome + "!") */
-
-/*let peso = Number(prompt("Digite o peso (Kg)"))
-let altura = Number(prompt("Digite a altura (M)")) */
-
-//let resultado = numero1 + numero2
-//let media = (numero1 + numero2) /2
- 
-/*let imc = peso / altura ** 2
-
-if (imc <=18) {
-    console.log("Abaixo do peso")
-} 
-else if (imc > 18 && imc <=24){
-    console.log("Normal")
-} 
-else {
-    console.log("Sobrepeso")
-}
-
-console.log(imc.toFixed(2))
-alert(imc.toFixed(2)) */
-
-// && -> condicao: todas as condicoes devem ser TRUE
-
-// || -> se alguma condicao for certa, vai entrar no IF
-
-// ! -> significa NAO. Ele inverte o valor do boleano
-
-/*console.log(!true) //false
-
-let idade = 12;
- //se NAO idade maior ou igual a 18
-if (!(idade >=18)){
-
-    console.log("Não é Maior de idade")
-} */
-
-//EXERCICIOS DE JAVASCRIPT SENAI
+//getElementsByClassName -> retorna uma lista de todos os elementos existentes.
 
 
+function selecionarPorClasse() {
 
-// Nível 1 Fácil
+    const elementos = document.getElementsByClassName('genero-acao')
 
+    //elementos.length quantidade de elementos encontrados.
+    console.log('Quantidade: ' + elementos.length)
 
+    for (i = 0; i < elementos.length; i++) {
 
-/*1. Verificar maioridade
-
-Crie um programa que solicite a idade de uma pessoa e informe se ela é maior de idade (18 anos ou mais) ou menor de idade. */
-
-/*const idade = Number(prompt("Digite sua idade: "))
-
-if (idade >= 18){
-     console.log("Você é MAIOR de idade!")
+        console.log(elementos[i].textContent.trim())
+        elementos[i].classList.add('elemento-selecionado')
     }
-else {
-  console.log("Você é MENOR de idade!")
-    } */
-
-
-
- /* 2. Positivo ou Negativo
-Solicite um número ao usuário e informe se ele é positivo ou negativo. Considere o número 0 como negativo.
- */
-
-/*const num = Number(prompt("Digite um número: "))
-
-if (num <= 0) {
-    console.log("Esse número é NEGATIVO")
 }
-else {
-    console.log("Esse número é POSITIVO")
-} */
 
+//QuerySelector -> retorna o PRIMEIRO elemento.
 
-/*3. Aprovação em uma prova
-Peça ao usuário a nota final de um aluno (de 0 a 100). Caso a nota seja 60 ou maior, informe que ele foi Aprovado. Caso contrário, informe que foi Reprovado. */
+function selecionarPorQuery() {
 
-/*const nota = Number(prompt("Digite a nota do aluno: "))
-
-if (nota >= 60) {
-    console.log("Aluno Aprovado!")
-} else {
-    console.log("Aluno Reprovado!")
-} */
-
-
-    /*4. Positivo, Negativo ou Zero
-Leia um número informado pelo usuário e indique se ele é:
-Positivo; 
-Negativo; 
-Zero.  */
-
-
-/*const num = Number(prompt("Digite um número: "))
-
-if (num < 0) {
-    console.log("Esse número é NEGATIVO")
+    const elemento = document.querySelector('.filme-mini')
+    console.log(elemento)
+    elemento.classList.add('elemento-selecionado')
 }
-else if (num > 0){
-    console.log("Esse número é POSITIVO") 
+
+//querySelectorAll  --> 
+
+
+function selecionarTodos() {
+
+    const elementos = document.querySelectorAll('.filme-mini')
+
+    //  => arrow function
+    // el = elemento atual, indice = posição (0, 1, 2...)
+
+    elementos.forEach((el, indice) => {
+        console.log(indice, el.textContent.trim())
+        el.classList.add('elemento-selecionado')
+    }
+    )
 }
-else {
-    console.log("Número ZERO")
-} */
-
-    /*5. Classificação por idade
-Solicite a idade de uma pessoa e classifique-a conforme as regras abaixo:
-Criança: de 0 a 12 anos; 
-Adolescente: de 13 a 17 anos; 
-Adulto: 18 anos ou mais. */
 
 
-/*const idade = Number(prompt("Digite sua idade: ")
+function mudarTexto() {
 
-if (idade <0){
+    //selecionar o element oque queremos mudar
+    const titulo = document.getElementById('titulo-destaque')
+
+    titulo.textContent = document.getElementById('input-busca').value
+
+    console.log('Novo Teste', titulo.textContent)
+
+}
+
+function adicionarBadge() {
     
-    console.log("Idade inválida")
+    //Criar o elemento
+    // createElement('span')
+    const badge = document.createElement('span')
 
-} else if (idade >= 0 && idade <=12) {
+    badge.className = 'badge'
+    badge.textContent = '⭐ Em Alta'
 
-    console.log(idade, "Ano(s), Você é uma criança!")
+    // Procura um elemento do HTML pelo ID
+    const container = document.getElementById('badge-container')
 
-} else if (idade >12 && idade <=17) {
+    // Remove tudo que estiver dentro do container
+    container.innerHTML = ''
+    // Adiciona um elemento FILHO dentro de outro elemento
+    container.appendChild(badge)
+}
 
-    console.log(idade, "Anos, Você é um adolescente!")
-} else {
+function mudarPoster(){
 
-    console.log(idade, "Anos, Você é maior de idade!")
-} */
-
-
-    /*6. Par ou Ímpar
-Solicite um número inteiro ao usuário e informe se ele é par ou ímpar. */
-
-/*const num = Number(prompt("Digite um número: "))
-
-if (num %2 == 0){
-
-    console.log("Número Par")
-
-} else {
-
-    console.log("Número Ímpar")
-} */
+const poster = document.getElementById('poster-destaque')
+const titulo = document.getElementById('titulo-destaque')
 
 
-
-    //Nivel 2 Intermediário
-
-
-
-    /*1. Calculadora simples
-Crie uma calculadora que:
-Solicite o primeiro número; 
-Solicite a operação desejada (+, -, * ou /); 
-Solicite o segundo número. 
-Ao final, exiba o resultado da operação escolhida. Caso seja informada uma operação inválida, exiba uma mensagem de erro. */
-
-/*let num1 = Number(prompt("Digite o Primeiro número: "));
-let operacao = prompt("Digite a operação desejada: ");
-let num2 = Number(prompt("Digite o Segundo Número: "));
-
-if (operacao !=="+" && operacao !== "-" && operacao !== "*" && operacao !==  "/") {
-
-    console.log ("Operção Inválida")
-
-} else if (operacao === "+") {
-
-    console.log(num1 + num2)
-
-} else if (operacao === "-") {
-
-    console.log(num1 - num2)
-
-} else if (operacao === "*") {
-
-    console.log(num1 * num2)
-
-} else {
+const opcoes = [
+        {
+            url: 'https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg',
+            nome: 'The Last of Us'
+        },
+        {
+            url: 'https://image.tmdb.org/t/p/w500/qZtAf4Z1lazGQoYVXiHOrvLr5lI.jpg',
+            nome: 'Wednesday'
+        },
+        {
+            url: 'https://image.tmdb.org/t/p/w500/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg',
+            nome: 'Breaking Bad'
+        },
+        {
+            url: 'https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg',
+            nome: 'Round 6'
+        },
+        {
+            url: 'https://image.tmdb.org/t/p/w500/twfKp60THrcOIep9sjHODOOfO8d.jpg',
+            nome: 'Stranger Things'
+        }
+    ];
     
-    console.log(num1 / num2)
-} */
+    const sorteado = opcoes[Math.floor(Math.random()  * opcoes.length)];
+
+    poster.src = sorteado.url
+    poster.alt = sorteado.nome
+    titulo.textContent = sorteado.nome
+   
+    console.log("Poster trocado para: " , sorteado.nome)
+
+    poster.style.opacity ='0'
+    poster.style.transition = 'opacity 0.3s';
+
+    //() => funcao anonima
+
+    setTimeout( () =>{
+
+           //todo esse bloco de codigo sera executado apos 300ms
+          poster.style.opacity ='1';
+          poster.classList.add('poster-fade-in')
+           
+          //remover uma classe apos 600ms
+          setTimeout( () =>  poster.classList.remove('poster-fade-in'), 600 )          
 
 
-
-    /*2. Maior entre três números
-Solicite três números diferentes ao usuário e informe qual deles é o maior.*/
-
-
-/*const num1 = Number(prompt("Digite o Primeiro Número"))
-const num2 = Number(prompt("Digite o Segundo Número"))
-const num3 = Number(prompt("Digite o Terceiro Número"))
-
-if (num1 >= num2 && num1 >= num3) {
-
-    console.log(num1, "É maior")
-
-} else if (num2 >= num1 && num2 >= num3) {
-
-    console.log(num2, "É maior")
-
-} else {
-
-    console.log(num3, "É maior")
-} */
+      },300     //300ms
+    );
+}
 
 
-    /*3. Desconto em compras
-Uma loja oferece 10% de desconto para compras acima de R$ 100,00.
-Solicite o valor da compra e informe o valor final que deverá ser pago.
-Caso a compra não atinja esse valor, informe o preço sem desconto. */
+function lerInput(){
 
+     const input =  document.getElementById('input-busca').value.trim()
 
-/*const valor = Number(prompt("Digite o valor"));
-let total;
-
-if (valor > 100) {
-
-    total = valor * 0.10;
-    valor = valor - total;
-    console.log("O valor final do produto com 10% de desconto será de R$" ,valor.toFixed(2))
-
-} else {
-    console.log("O valor do produto é de R$" ,valor)
-} */
-
-
-
-    /*4. Sistema de login
-Crie um programa que solicite um nome de usuário e uma senha.
-Considere que:
-Usuário: admin 
-Senha: 1234*/
-
-
-
-/*const user = prompt("Digite o Nome de Usuário: ")
-const senha = prompt("Digite a Senha: ")
-
-if (user !== "admin" || senha!== "1234") {
-    alert("Acesso Negado!")
-} else {
-    alert("Login bem-sucedido!")
-} */
-
-
-
-    /*Nivel 3 Dificil
-
-
-
-    1. Classificação de triângulos
-Solicite ao usuário os comprimentos dos três lados de um possível triângulo.
-Primeiro, verifique se os valores realmente podem formar um triângulo.
-Caso possam, classifique-o como:
-Equilátero (todos os lados iguais); 
-Isósceles (dois lados iguais); 
-Escaleno (todos os lados diferentes). 
-Caso não seja possível formar um triângulo, informe isso ao usuário.*/
-
-
-
-
-/*let l1 = Number(prompt("Digite o Primeiro lado"))
-let l2 = Number(prompt("Digite o Segundo lado"))
-let l3 = Number(prompt("Digite o Terceiro lado"))
   
-if ((l1 < l2 + l3) && (l2 < l1 + l3) && (l3 < l1 + l2) ) {
-    console.log ("É possiível formar esse triângulo")
-    if (l1 === l2 && l2 === l3) {
+     if(input === ''){
+           alert(" ⚠️ Digite algo no campo! ")
+           return; //para processo processo da funcao.
+     }
+    
+    const titulo = document.getElementById('titulo-destaque')
 
-        console.log("Triângulo Equilátero")
+    titulo.textContent = input
 
-    } else if (l1 === l2 || l2 === l3 || l1 === l3) {
+    titulo.classList.add('texto-animado')
 
-        console.log("Triângulo Isóceles")
-    } else {
+
+}
+
+function adicionarFilme(){
+
+    //.trim() elimina os espaços
+    //.value pega o valor que foi digitado
+    const input = document.getElementById('input-filme').value.trim()
+
+    if (input == ''){
+        alert('Digite um nome de filme');
+        return; //interrompe a funcao.
+    }
+
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+
+    span.textContent = input //nome do filme.
+
+    const btnRemover = document.createElement('button');
+    btnRemover.textContent = 'Remover'
+
+    li.appendChild(span)
+    li.appendChild(btnRemover)
+
+    const lista = document.getElementById('minha-lista')
+    lista.appendChild(li)
+
+    //botao remover
+
+    btnRemover.onclick = function(){
+        this.parentElement.remove()
+    }
+
+    document.getElementById('input-filme').value = ''
+
+}
+
+//addEventListner - Escuta os eventos da página.
+
+document.addEventListener('DOMContentLoaded' ,function(){
+    const cardFavorito = document.getElementById('card-favorito')
+    const statusFavorito = document.getElementById('status-favorito')
+
+    //escutar o evento click da div cardFavorito
+    cardFavorito.addEventListener('click', function(){
+        statusFavorito.textContent = '❤️ FAVORITADO'
+    }
+    )
+    
+    const cardDetalhes = document.getElementById('card-detalhes')
+    const statusDetalhes = document.getElementById('status-detalhes')
+
+    cardDetalhes.addEventListener('dblclick', function(){
+        statusDetalhes.textContent = 'Carregando...'
+        statusDetalhes.style.color="#ffd700"
+
+        setTimeout(() => {
+            statusDetalhes.textContent = '✅ Detalhes carregados'
+            statusDetalhes.style.color = '#3fb950'
+        }, 1000);
+    })
+
+    const inputFiltro = document.getElementById('input-filtro')
+    if(inputFiltro){
+        inputFiltro.addEventListener('input', function(){
+            filtrarFilmes(this.value)
+        })
+    }
+
+})
+
+const todosFilmes = [
+    {
+        nome: 'Stranger Things',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/twfKp60THrcOIep9sjHODOOfO8d.jpg'
+    },
+    {
+        nome: 'Breaking Bad',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg'
+    },
+    {
+        nome: 'The Witcher',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg'
+    },
+    {
+        nome: 'La Casa de Papel',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/MoEKaPFHABtA1xKoOteirGaHl1.jpg'
+    },
+    {
+        nome: 'Round 6',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg'
+    },
+    {
+        nome: 'Peaky Blinders',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/i0uajcHH9yogXMfDHpOXexIukG9.jpg'
+    },
+    {
+        nome: 'Wednesday',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/qZtAf4Z1lazGQoYVXiHOrvLr5lI.jpg'
+    },
+    {
+        nome: 'The Last of Us',
+        tipo: 'Série',
+        img: 'https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg'
+    },
+    {
+        nome: 'Oppenheimer',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg'
+    },
+    {
+        nome: 'Barbie',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg'
+    },
+    {
+        nome: 'Duna',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg'
+    },
+    {
+        nome: 'Coringa',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'
+    },
+    {
+        nome: 'A Origem',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg'
+    },
+    {
+        nome: 'Interestelar',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg'
+    },
+    {
+        nome: 'Parasita',
+        tipo: 'Filme',
+        img: 'https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg'
+    },
+    {
+        nome: 'Vingadores: Ultimato',
+        tipo: 'Filme',
+        img: 'https://br.web.img3.acsta.net/pictures/19/04/26/17/30/2428965.jpg'
+    }
+];
+
+function inicializarGaleria(){
+
+    const galeria = document.getElementById('galeria-filmes')
+
+    todosFilmes.forEach( function(filme){
         
-        console.log("Triângulo Escaleno")
+        const card = document.createElement('div')
+        card.className = 'card-galeria'
+        card.dataset.name = filme.nome
+        card.innerHTML = `
+                            <img
+                                src="${filme.img}"
+                                alt="${filme.nome}"
+                                onerror="this.style.background='#2a2a2a'"
+                            >
+                            <div class="card-nome">
+                                ${filme.nome}
+                            </div>
+                            <div class="card-tipo">
+                                ${filme.tipo}
+                            </div>
+            `;
+
+            galeria.appendChild(card)
+
+
+
     }
-    
-} else {
-
-    alert("Impossível Formar o triângulo")
-} */
-
-
-
-
-    /*2. Conversão de notas (Conceitos)
-Solicite uma nota entre 0 e 100 e converta-a para um conceito conforme a tabela abaixo:
-A: 90 a 100 
-B: 80 a 89 
-C: 70 a 79 
-D: 60 a 69 
-F: abaixo de 60 
-Exiba o conceito correspondente.*/
-
-
-
-
-/*let nota = Number(prompt("Digite a nota do aluno: "))
-if (nota > 100 || nota < 0) {
-
-    alert("Nota Inválida")
-
-} else if (nota <60 ) {
-    
-    console.log("F")
-
-} else if (nota >= 60 && nota <=69) {
-
-    console.log("D")
-}
- else if (nota >= 70 && nota <=79) {
-
-    console.log("C")
-
-}
- else if (nota >= 80 && nota <=89) {
-
-    console.log("B")
-}
- else {
-
-    console.log("A")
-} */
-
-
-/*3. Cálculo de IMC
-Solicite o peso (em quilogramas) e a altura (em metros) de uma pessoa.
-Calcule o Índice de Massa Corporal (IMC) e informe sua classificação:
-Abaixo do peso 
-Peso normal 
-Sobrepeso 
-Obesidade */
-
-
-
-
-
-
-
-/*4. Ano Bissexto
-Solicite ao usuário um ano e informe se ele é bissexto ou não bissexto.
-Considere as seguintes regras:
-Um ano é bissexto se for divisível por 400; ou 
-Se for divisível por 4 e não for divisível por 100. 
-Caso contrário, o ano não é bissexto.*/
-
-/*const ano = Number(prompt("Digite o Ano: "))
-
-//se o resto da divisao por 4 for igual a 0, o ano é bissexto
-//se o resto da divisao de ano por 100 é diferente de zero
-
-//ou o resto da divisao de ano por 400 é igual a zero
-
-
-if ( (ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0) {
-    alert(ano + " É um ano bissexto")
-}
-else {
-    alert(ano + " NÃO é um ano bissexto")
-}*/
-
-
-
-
-
-
-
-
-
-
-//Laços de Repetição
-//perimite criar loops que são executados zero ou mais vezes
-//Enquanto condicao for TRUE, executa bloco de código
-
-/*while (false){
-    console.log("Ao infinito e... Além!")
-}*/
-
-
-//contador que exiba na tela de 1 a 5
-
-/*let contador = 1;
-
-while (contador <=5){
-
-    console.log("Contagem: " + contador)
-
-    //contador = (contador + 1) contador recebe ele +1
-
-    contador++ //contador recebe ele +1
-}*/
-
-//contagem regressiva
-
-
-/*let tempo = 10;
-
-while (tempo > 0){
-
-    console.log(tempo)
-
-    //tempo = tempo -1 Retira 1 do tempo
-    tempo-- //Retira -1 do tempo
-
-}*/
-
-
-//validacao de senha
-
-//const senhaCorreta = "148supersenha"
-/*let tentativa =""
-
-
-while (tentativa != senhaCorreta){
-
-    tentativa = prompt("Digite a Senha: ")
-
-    if(tentativa === senhaCorreta)
-        console.log("Senha correta! Acesso liberado.")
-
-    else {
-        console.log("Senha incorreta. Tente novamente")
-    }
-}*/
-
-
-/*let soma = 0;
-let numero = 0;
-
-while (soma <=100){
-
-     numero = Number(prompt("Digite um Número: "));
-
-     soma = soma + numero;
+    )
 }
 
-console.log("A soma dos numeros chegou em " + soma);*/
+inicializarGaleria()
+
+function filtrarFilmes (termoBusca) {
+
+    const termo = termoBusca.toLowerCase().trim()
+    const cards = document.querySelectorAll('.card-galeria')
+    let visiveis = 0
+
+    cards.forEach( function(card){
+
+        const nomeDoFilme = card.dataset.name.toLowerCase()
+        const combina = termo === '' || nomeDoFilme.includes(termo);
+
+        if (combina){
+            card.classList.remove('oculto')
+            visiveis++
+        }
+        else{
+            card.classList.add('oculto')
+        }
+
+        const semResultado = document.getElementById('sem-resultado')
+
+        if(semResultado){
+                            //se visiveis for igual a 0 entao block SENAO none
+            semResultado.style.display = visiveis === 0 ? 'block' : 'none'
+        }
 
 
-
-
-//DO - WHILE Perimite criar loops que são executados uma ou mais vezes
-
-
-
-/*let repetir = false
-
-//FAÇA
-do{
-    console.log("Só uma vez.")
-
-}while(repetir) //ENQUANTO A CONDIÇÃO FOR TRUE
-
-
-//WHILE vs DO..WHILE
-
-let num = 10;
-
-while (num < 5){
-    console.log("Isso não vai aparecer")
-}
-////////////////////////////////////////////
-
-do{
-    console.log("Isso vai aparecer uma vez")
-}while(num < 5)*/
-
-
-
-
-
-
-//ADVINHE O NUMERO
-
-
-//1 a 10
-
-/*const numeroSecreto = Math.floor(Math.random() * 10) +1;
-
-let palpite;
-let tentativas = 0;
-
-console.log("Advinhe o numero entre 1 a 10.");
-
-
-do{
-
-    //alert(Math.floor(Math.random() * 10) +1)
-
-    palpite = Number(prompt("Seu palpite: "));
-    tentativas++
-
-    if (Number.isNaN(palpite)){
-        alert("Digite um número válido")
-    }
-
-    else if (palpite == numeroSecreto){
-        alert("Acertou!! " + tentativas + " tentativas");
-    }
-    else if(palpite < numeroSecreto){
-        alert("Muito baixo, tente um número maior");
-    }
-    else if(palpite > numeroSecreto){
-        alert("Muito alto, tente um número menor");
-    }
-
-}while(palpite != numeroSecreto)*/
-
-
-
-
-
-
-//FOR -> LOOP
-
-
-
-
-//let conta = 0; Variavel de controle
-
-//conta < 10; analise de condicao
-
-//conta++ O que acontece na variável de controle
-
-
-/*for (let conta = 0; conta < 10; conta++){
-    console.log(conta)
+    } )
 
 }
-console.log("O loop acabou")*/
-
-
-
-
-
-/*const numero = Number(prompt("Tabuada de qual numero? "));
-
-if (Number.isNaN(numero)){
-    console.log("❌ Numero inválido! ");
-}
-else {
-
-    //console.log("Tabuada do " + numero) MESMA COISA ABAIXO
-    console.log(`\n Tabuada do ${numero} \n`); //OUTRO JEITO DE JUNTAR STRING COM VARIAVEL
-
-    for ( let i = 1; i<=10;  i++ ){
-
-        const resultado = numero * i;
-        //console.log(numero + " x " + i + " = " + resultado)
-        console.log(`${numero} x ${i} = ${resultado}`);
-    }
-}
-console.log("FIM")*/
-
-
-
-//EXIBA NUMEROS PARES DE 0 A 20
-
-
-/*console.log("Numeros Pares de 0 a 20: \n")
-
-//pares = pares +2 MESMO CODIGO DE OPERACAO
-
-for( let pares=0; pares<=20; pares += 2  ){
-
-    console.log(pares)
-}*/
-
-
-
-//CONTAGEM REGRESSIVA COM FOR
-
-/*console.log("Lancamento em: \n")
-
-for (let conta = 10; conta >= 1; conta--){
-    console.log(conta + "...")
-}
-console.log("DECOLAR!!")*/
-
-
-
-/*for (let numero = 1; numero <= 3; numero++){
-
-    let linha = "";
-
-    for (let repeticao = 1; repeticao <= 3; repeticao ++){
-        linha += numero + " "
-    }
-
-    console.log(linha)
-
-}*/
-
-
-/*for (let linha = 1; linha <=5; linha ++){
-
-    let coluna = ""
-    
-    for (asterisco = 1; asterisco <= linha; asterisco ++){
-        coluna += "*" + " "
-    }
-    console.log(coluna)
-}*/
-
-
-
-
-
-
-
-
-//EXERCICOS DE REPETIÇÃO
-
-
-
-
-
-//NIVEL 1 FACIL
-
-
-
-
-
-/*1. Contagem de 1 a 10
-Crie um programa que exiba todos os números de 1 até 10, um por linha.*/
-
-
-/*num = 0
-
-while (num < 10){
-    num += 1
-    console.log(num)
-}*/
-
-
-
-
-
-
-/*2. Tabuada de um número
-Solicite um número ao usuário e exiba sua tabuada de multiplicação de 1 a 10.
-Exemplo para o número 5:
-5 x 1 = 5
-5 x 2 = 10
-...
-5 x 10 = 50*/
-
-
-/*const num = Number(prompt("Digite um numero para ver sua tabuada: "))
-
-if (Number.isNaN(num)){
-
-    console.log("Numero Inválido!");
-}
-else {
-
-    console.log(`Tabuada do ${num}`)
-
-    for (let i=1; i<=10; i++){
-        
-        let resultado = num * i
-
-        console.log(`${num} x ${i} = ${resultado}`)
-    }
-
-}*/
-
-
-
-
-
-
-/*3. Soma dos primeiros N números
-Solicite um número inteiro positivo ao usuário e calcule a soma de todos os números de 1 até esse valor.
-Exemplo:
-Entrada: 5 
-Saída: 15 
-(1 + 2 + 3 + 4 + 5 = 15)*/
-
-/*const numero = Number(prompt("Digite um numero e veja a soma de seus antecessores: "))
-
-if (Number.isNaN(numero)){
-    alert("Numero Invalido")
-}
-else {
-    let soma = 0
-
-    for (let i = 1; i <= numero; i++){
-        soma += i
-       
-    }
-     console.log(soma)
-}*/
-
-
-
-
-
-
-
-
-
-//NIVEL 2 INTERMEDIARIO
-
-
-
-
-
-
-
- /*4. Números pares de 1 a 50
-Exiba todos os números pares entre 1 e 50, um por linha.*/
-
-
-
-/*console.log("Numeros pares de 1 a 50")
-
-for(let pares = 1; pares <=50; pares++){
-
-    if (pares %2==0){
-
-        console.log(pares)
-    }
-    
-}*/
-
-
-
-
-/*5. Jogo de adivinhação
-Crie um programa que gere um número aleatório entre 1 e 100.
-O usuário deverá informar palpites até acertar o número.
-Durante o jogo:
-Se o palpite for maior que o número secreto, informe que o número é menor. 
-Se o palpite for menor que o número secreto, informe que o número é maior. 
-Quando acertar, exiba uma mensagem de parabéns e encerre o programa. */
-
-
-
-/*const numeroSecreto = Math.floor(Math.random() * 100) + 1; 
-let palpite; 
-let tentativas = 0; 
-
-console.log("Adivinhe o número entre 1 e 100."); 
-
-do { 
-    palpite = Number(prompt("Seu palpite:")); 
-    
-    if (Number.isNaN(palpite)) { 
-        alert("Digite um número válido"); 
-        continue; // Pula para a próxima iteração sem contar tentativa
-    } 
-    
-    tentativas++; 
-
-    if (palpite === numeroSecreto) { 
-        alert("Acertou!! Você precisou de " + tentativas + " tentativa(s)."); 
-    } else if (palpite < numeroSecreto) { 
-        alert("Muito baixo, tente um número maior"); 
-    } else if (palpite > numeroSecreto) { 
-        alert("Muito alto, tente um número menor"); 
-    } 
-} while (palpite !== numeroSecreto);*/
-
-
-
-/*6. Solicite um número inteiro ao usuário e faça uma contagem regressiva até 0, exibindo cada número.
-Exemplo:
-Entrada:
-5
-Saída:
-5
-4
-3
-2
-1
-0*/
-
-
-
-
-//Nivel 3 Dificil
-
-
-
-
-/*let entrada;
-
-while (true) {
-    entrada = Math.floor(Number(prompt("Digite um Número para a contagem Regressiva: ")));
-
-    if (!Number.isNaN(entrada) && entrada >= 0) {
-        break;
-    }
-    
-    alert("Entrada inválida! Por favor, digite um número válido.");
-}
-
-for (let conta = entrada; conta >= 0; conta--) {
-    console.log(conta);
-}*/
-
-
-/*7. Soma dos dígitos
-Solicite um número inteiro positivo ao usuário e calcule a soma de todos os seus dígitos.
-Exemplo:
-Entrada: 1234 
-Saída: 10 
-(1 + 2 + 3 + 4 = 10)*/
-
-
-/*let numero;
-
-while (true) {
-    numero = prompt("Digite um número inteiro positivo para somar seus dígitos: ");
-
-    if (!Number.isNaN(Number(numero)) && Number(numero) > 0) {
-        break;
-    }
-    alert("Entrada inválida! Por favor, digite um número válido.");
-}
-let soma = 0;
-for (let i = 0; i < numero.length; i++) {
-    let digito = Number(numero[i]);
-    soma += digito;
-}
-console.log(soma);*/
-
-
-
-
-/*8. Fatorial
-Solicite um número inteiro positivo ao usuário e calcule o seu fatorial.
-O fatorial de um número é obtido multiplicando esse número por todos os inteiros positivos menores que ele, até chegar em 1.
-Exemplo:
-5! = 5 × 4 × 3 × 2 × 1 = 120 
-4! = 4 × 3 × 2 × 1 = 24 
-3! = 3 × 2 × 1 = 6 
-Ao final, exiba o resultado do cálculo. */
-
-/*let numero = Number(prompt("Digite um número inteiro positivo para calcular seu fatorial: "));
-
-if (Number.isNaN(numero) || numero < 0 || !Number.isInteger(numero)) {
-    alert("Entrada inválida! Por favor, digite um número inteiro positivo.");
-} else {
-    let fatorial = 1;
-    for (let i = 1; i <= numero; i++) {
-        fatorial *= i;
-    }
-    console.log(`O fatorial de ${numero} é ${fatorial}`);
-} */
-
-
-    /*9. Inverter número
-Solicite um número inteiro positivo ao usuário e exiba esse número com seus dígitos na ordem inversa.
-Exemplo:
-Entrada: 12345 
-Saída: 54321 */
-
-
-/*let numero;
-
-while (true) {
-    numero = Number(prompt("Digite um número inteiro positivo para inverter seus dígitos: "));
-    if (!Number.isNaN(numero) && numero >= 0 && Number.isInteger(numero)) {
-        break;
-    }
-    alert("Entrada inválida! Por favor, digite um número válido.");
-}
-
-let numeroInvertido = 0;
-
-while (numero > 0) {
-
-    let digito = numero % 10; 
-    numeroInvertido = numeroInvertido * 10 + digito; 
-    numero = Math.floor(numero / 10); 
-}
-console.log(numeroInvertido);*/
-
-
-
-
-/*10. Números perfeitos até 1000
-Um número perfeito é aquele cuja soma de todos os seus divisores positivos, exceto ele mesmo, é igual ao próprio número.
-Exemplo:
-Divisores de 6: 1, 2 e 3 
-1 + 2 + 3 = 6 
-Crie um programa que encontre e exiba todos os números perfeitos entre 1 e 1000. */
-
-//console.log("Números perfeitos entre 1 e 1000:");
-
-// for (let num = 1; num <= 1000; num++) {
-
-//     let somaDivisores = 0;
-
-//     for (let i = 1; i < num; i++) {
-
-//         if (num % i === 0) {
-
-//             somaDivisores += i;
-//         }
-//     }
-//     if (somaDivisores === num) {
-
-//         console.log(num);
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//ARRAY
-//UM ARRAY É UM TIPO DE DADOS QUE SERVE PARA ARMAZENAR VALOR
-//SEQUENCIALMENTO EM FORMA DE LISTA.
-
-//ITENS COMEÇAM COM NÚMERO ZERO.
-
-// const numeros = [1, 2, 3, 4, 5];
-// const nomes = ["José", "Maria", "João", "Ana", "Pedro", "Alexandre", "Carla", "Lucas", "Fernanda", "Rafael"];
-
-
-// console.log(numeros[0]); // Acessa o primeiro elemento do array "numeros"
-// console.log(nomes[2]); // Acessa o terceiro elemento do array "nomes"
-
-// //LENGTH
-// //É UMA PROPRIEDADE QUE RETORNA O TAMANHO DO ARRAY.
-
-// console.log(nomes.length);
-
-
-// //VAMOS PERCORRER TODA A LISTA DE NOMES E EXIBIR CADA UM DELA NA TELA.
-// //E COLOCAR NO CONSOLE CADA ITEM.
-
-// for (let i = 0; i < nomes.length; i++) {
-
-//     console.log(nomes[i]);
-// }
-
-
-
-//FOR OF
-//É UMA FORMA MAIS SIMPLES DE PERCORRER UM ARRAY.
-
-// const frutas = ["Maçã", "Banana", "Laranja", "Uva", "Abacaxi"];
-
-// for ( const fruta of frutas) {
-//     console.log(fruta);
-// }
-
-
-
-//FACA A SOMA DE TODOS OS NUMEROS DENTRO DE UM ARAAY
-
-// const listaNumeros = [10, 25, 8, 42, 15, 7];
-
-// let soma = 0;
-
-// for (const numero of listaNumeros) {
-//     soma += numero;
-// }
-// console.log("Numeros ", listaNumeros)
-// console.log("Soma ", soma)
-
-
-
-
-// const notas = [7.5, 9.0, 6.5, 8.8, 10.0, 5.5];
-
-// let maiorNota = notas[0];
-
-// for (const nota of notas) {
-//     if (nota > maiorNota) {
-//         maiorNota = nota;
-//     }
-// }
-// console.log("Maior nota: ", maiorNota);
-
-
-//Vetor - guarda valores
-//posicoes (indice) -> 0
-//for of -> percorre o array
-
-//OBJETO - São como "fichas" com informações
-// - Cada informação tem um nome (chave) e um valor
-
-//PESSOA - ( Nome, idade, Email, Genrero, CPF)
-
-//  const pessoa = {
-//      nome: "José",
-//      idade: 30,
-//      email: "jose@email.com",
-//      genero: "Masculino",
-//      cpf: "123.456.789-00"
-//  };
-
-// // console.log(pessoa) //Acessa todo o objeto
-// // console.log(pessoa.nome) //Acessa apenas o nome do objeto
-// // console.log(pessoa['idade']) //Acessa apenas a idade do objeto "30"
-
-// //FOR IN - Percorre as chaves do objeto
-
-// for (const chave in pessoa) {
-
-//     //Chave é o nome da propriedade do objeto
-//     //objeto[chave] é o valor da propriedade do objeto
-
-//     console.log(pessoa[chave]);
-//     //para cada vez que o for percorrer, ele vai pegar a CHAVE atual e retornar o VALOR que a chave representa.
-// }
-
-
-
-//Objeto Aluno que guarde os dados de nome, matricula, curso e nota.
-
-// const aluno = {
-//     //sempre chave e valor
-//     Nome: "Maria",
-//     Matricula: "2023001",
-//     Curso: "Engenharia de Software",
-//     Nota: 8.5
-// };
-// console.log("Dados do aluno:\n")
-
-// for (const chave in aluno) {
-//     const valor = aluno[chave];
-//     console.log(`${chave}: ${valor}`);
-// }
-
-//Lista de produtos
-
-//informcao de produto, preco e quantidade de itens
-
-//arrays de objetos.
-//cada item do array é um objeto.
-// const carrinho = [
-//     //objeto.
-//     {produto: "Camiseta", preco: 49.90, quantidade: 2},
-//     {produto: "Calça", preco: 99.90, quantidade: 1},
-//     {produto: "Tênis", preco: 199.90, quantidade: 1},
-// ];
-
-// let total = 0;
-
-// //FOR IN -> Objetos | retorna chaves / indice
-// //FOR OF -> Arrays, strings | retorna valores
-
-// for (const item of carrinho) {
-//     //Retornar apenas o nome do produto, o preço e o total a pagar
-// console.log(`Produto: ${item.produto}, Preço: R$${item.preco.toFixed(2)}, Quantidade: ${item.quantidade}`);
-//     total += item.preco * item.quantidade;
-// }
-// console.log(`Total a pagar: R$${total.toFixed(2)}`);
-
-
-
-
-
-
-
-// Desafio: Controle de pedidos de uma lanchonete 🍔
-
-// Crie um programa que represente os pedidos de uma lanchonete.
-
-// O programa deverá possuir pelo menos 4 itens, e cada item deve conter:
-
-// nome
-// preco
-// quantidade
-
-// Depois, o programa deverá:
-
-// Percorrer todos os itens utilizando for...of.
-// Calcular o valor total de cada item (preco × quantidade).
-// Exibir no console o nome do item, a quantidade e o valor total.
-// Calcular e exibir o valor total do pedido.
-// Ao final, informar qual item teve o maior valor total, considerando a quantidade comprada.
-
-
-
-
-
-
-
-// Produtos e seus dados (nome, preço e quantidade)
-// const pedidos = [
-//     { nome: "Hambúrguer", preco: 15.90, quantidade: 2 },
-//     { nome: "Batata Frita", preco: 8.90, quantidade: 1 },
-//     { nome: "Refrigerante", preco: 5.90, quantidade: 3 },
-//     { nome: "Sorvete", preco: 7.90, quantidade: 1 }
-// ];
-
-// // Variáveis para armazenar o valor total do pedido e o item com maior valor total
-// let valorTotalPedido = 0;
-// let itemMaiorValor = null;
-// let maiorValorTotal = 0;
-
-
-// // Percorrer todos os itens do pedido
-// for (const item of pedidos) {
-//     const valorTotalItem = item.preco * item.quantidade;
-//     console.log(`Item: ${item.nome}, Preço: R$${item.preco.toFixed(2)}, Quantidade: ${item.quantidade}, Valor Total: R$${valorTotalItem.toFixed(2)}`);
-//     valorTotalPedido += valorTotalItem;
-
-//     // Verificar se o item atual tem o maior valor total
-//     if (valorTotalItem > maiorValorTotal) {
-//         maiorValorTotal = valorTotalItem;
-//         itemMaiorValor = item;
-//     }
-// }
-
-// // Exibir o valor total do pedido e o item com maior valor total
-// console.log(`Valor total do pedido: R$${valorTotalPedido.toFixed(2)}`);
-// console.log(`Item com maior valor total: ${itemMaiorValor.nome} (R$${maiorValorTotal.toFixed(2)})`);
